@@ -37,9 +37,7 @@ open class PanModalPresentationController: UIPresentationController {
      Constants
      */
     struct Constants {
-        static let indicatorYOffset = CGFloat(8.0)
         static let snapMovementSensitivity = CGFloat(0.7)
-//        static let dragIndicatorSize = CGSize(width: UIScreen.main.bounds.width, height: 145.0)
         static let dragIndicatorAera = CGSize(width: UIScreen.main.bounds.width, height: 42.0)
     }
 
@@ -412,7 +410,7 @@ private extension PanModalPresentationController {
     func addDragIndicatorView(to view: UIView) {
         view.addSubview(dragViewContainer)
         dragViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        dragViewContainer.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        dragViewContainer.bottomAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat.zero).isActive = true
         dragViewContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dragViewContainer.widthAnchor.constraint(equalToConstant: Constants.dragIndicatorAera.width).isActive = true
         dragViewContainer.heightAnchor.constraint(equalToConstant: Constants.dragIndicatorAera.height).isActive = true
@@ -862,8 +860,8 @@ private extension PanModalPresentationController {
 
         // Draw around the drag indicator view, if displayed
         if presentable?.showDragIndicator == true {
-            let indicatorLeftEdgeXPos = view.bounds.width/2.0 - Constants.dragIndicatorAera.width/2.0
-            drawAroundDragIndicator(currentPath: path, indicatorLeftEdgeXPos: indicatorLeftEdgeXPos)
+            let indicatorLeftEdgeXPos = 0.0 // view.bounds.width/2.0 - Constants.dragIndicatorAera.width/2.0
+            drawAroundDragIndicator(currentPath: path, indicatorLeftEdgeXPos: CGFloat(indicatorLeftEdgeXPos))
         }
 
         // Set path as a mask to display optional drag indicator view & rounded corners
@@ -881,7 +879,7 @@ private extension PanModalPresentationController {
      */
     func drawAroundDragIndicator(currentPath path: UIBezierPath, indicatorLeftEdgeXPos: CGFloat) {
 
-        let totalIndicatorOffset = Constants.indicatorYOffset + Constants.dragIndicatorAera.height
+        let totalIndicatorOffset = Constants.dragIndicatorAera.height
 
         // Draw around drag indicator starting from the left
         path.addLine(to: CGPoint(x: indicatorLeftEdgeXPos, y: path.currentPoint.y))
