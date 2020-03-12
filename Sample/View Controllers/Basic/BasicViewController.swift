@@ -33,4 +33,50 @@ extension BasicViewController: PanModalPresentable {
     var anchorModalToLongForm: Bool {
         return false
     }
+    
+    var cornerRadius: CGFloat {
+        return CGFloat.zero
+    }
+    
+    var dragIndicatorView: PanModalDragViewProtocol {
+        let view: DragView = DragView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40.0))
+        return view
+    }
+}
+
+
+class DragView: UIView, PanModalDragViewProtocol {
+    
+    var dragIndicator: UIView {
+        return UIView()
+    }
+    
+    var viewAlpha: CGFloat {
+        get {
+            return alpha
+        }
+        
+        set {
+            alpha = newValue
+        }
+    }
+    
+    var view: UIView {
+        return self
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = .white
+    }
+    
 }

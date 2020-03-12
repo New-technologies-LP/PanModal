@@ -96,6 +96,11 @@ public extension PanModalPresentable where Self: UIViewController {
     var showDragIndicator: Bool {
         return shouldRoundTopCorners
     }
+    
+    var dragIndicatorView: PanModalDragViewProtocol {
+        let view: PanModalDragView = PanModalDragView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: PanModalPresentationController.Constants.dragIndicatorAera))
+        return view
+    }
 
     func shouldRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
         return true

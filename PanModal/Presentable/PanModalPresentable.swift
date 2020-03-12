@@ -172,6 +172,12 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var showDragIndicator: Bool { get }
+    
+    /**
+     View with Drag indicator
+        
+     */
+    var dragIndicatorView: PanModalDragViewProtocol { get }
 
     /**
      Asks the delegate if the pan modal should respond to the pan modal gesture recognizer.

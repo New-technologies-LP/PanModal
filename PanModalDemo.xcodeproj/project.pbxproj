@@ -23,6 +23,10 @@
 		0F2A2C682239C15D003BDB2F /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C072A9220BA82A00124CE1 /* UIViewController+PanModalPresenter.swift */; };
 		0F2A2C692239C162003BDB2F /* DimmedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13906E216D9458007A3E64 /* DimmedView.swift */; };
 		0F2A2C6A2239C165003BDB2F /* PanContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94795C9C21F03368008045A0 /* PanContainerView.swift */; };
+		13C8E762241A2A8500CE16EE /* PanModalDragViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C8E761241A2A8500CE16EE /* PanModalDragViewProtocol.swift */; };
+		13C8E764241A2BE200CE16EE /* PanModalDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C8E763241A2BE200CE16EE /* PanModalDragView.swift */; };
+		13C8E767241A354700CE16EE /* PanModalDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C8E766241A31C700CE16EE /* PanModalDragView.swift */; };
+		13C8E768241A354700CE16EE /* PanModalDragViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C8E765241A31C700CE16EE /* PanModalDragViewProtocol.swift */; };
 		743CABB02225FC9F00634A5A /* UserGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CABAF2225FC9F00634A5A /* UserGroupViewController.swift */; };
 		743CABB22225FD1100634A5A /* UserGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CABB12225FD1100634A5A /* UserGroupHeaderView.swift */; };
 		743CABB42225FE7700634A5A /* UserGroupMemberPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CABB32225FE7700634A5A /* UserGroupMemberPresentable.swift */; };
@@ -93,6 +97,10 @@
 		0F2A2C512239C119003BDB2F /* PanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2A2C532239C119003BDB2F /* PanModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanModal.h; sourceTree = "<group>"; };
 		0F2A2C542239C119003BDB2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13C8E761241A2A8500CE16EE /* PanModalDragViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalDragViewProtocol.swift; sourceTree = "<group>"; };
+		13C8E763241A2BE200CE16EE /* PanModalDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalDragView.swift; sourceTree = "<group>"; };
+		13C8E765241A31C700CE16EE /* PanModalDragViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PanModalDragViewProtocol.swift; path = PanModal/Presentable/PanModalDragViewProtocol.swift; sourceTree = "<group>"; };
+		13C8E766241A31C700CE16EE /* PanModalDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PanModalDragView.swift; path = PanModal/Presentable/PanModalDragView.swift; sourceTree = "<group>"; };
 		743CABAF2225FC9F00634A5A /* UserGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupViewController.swift; sourceTree = "<group>"; };
 		743CABB12225FD1100634A5A /* UserGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupHeaderView.swift; sourceTree = "<group>"; };
 		743CABB32225FE7700634A5A /* UserGroupMemberPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupMemberPresentable.swift; sourceTree = "<group>"; };
@@ -304,6 +312,8 @@
 				DCC0EE7B21917F2500208DBC /* PanModalPresentable+Defaults.swift */,
 				DC139069216D9458007A3E64 /* PanModalPresentable+UIViewController.swift */,
 				74C072A6220BA78800124CE1 /* PanModalPresentable+LayoutHelpers.swift */,
+				13C8E761241A2A8500CE16EE /* PanModalDragViewProtocol.swift */,
+				13C8E763241A2BE200CE16EE /* PanModalDragView.swift */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";
@@ -359,6 +369,8 @@
 		DCA741A1216D90410021F2F2 = {
 			isa = PBXGroup;
 			children = (
+				13C8E766241A31C700CE16EE /* PanModalDragView.swift */,
+				13C8E765241A31C700CE16EE /* PanModalDragViewProtocol.swift */,
 				DCA741AC216D90410021F2F2 /* Sample */,
 				DC139062216D9431007A3E64 /* PanModal */,
 				743CABC52226171500634A5A /* Tests */,
@@ -531,6 +543,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C8E762241A2A8500CE16EE /* PanModalDragViewProtocol.swift in Sources */,
+				13C8E764241A2BE200CE16EE /* PanModalDragView.swift in Sources */,
 				0F2A2C5E2239C137003BDB2F /* PanModalAnimator.swift in Sources */,
 				0F2A2C5F2239C139003BDB2F /* PanModalPresentationAnimator.swift in Sources */,
 				0F2A2C602239C13C003BDB2F /* PanModalPresentationController.swift in Sources */,
@@ -559,6 +573,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C8E767241A354700CE16EE /* PanModalDragView.swift in Sources */,
+				13C8E768241A354700CE16EE /* PanModalDragViewProtocol.swift in Sources */,
 				DC3B2EBA222A560A000C8A4A /* TransientAlertViewController.swift in Sources */,
 				743CABB42225FE7700634A5A /* UserGroupMemberPresentable.swift in Sources */,
 				74C072A3220BA6E500124CE1 /* PanModalAnimator.swift in Sources */,
